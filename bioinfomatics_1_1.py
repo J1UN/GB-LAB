@@ -1,0 +1,1 @@
+This is sequence file
