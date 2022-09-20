@@ -3,6 +3,7 @@ import re
 fasta= open("sequence.protein.fasta",'r')   #fasta파일 열기
 
 data= fasta.readlines()                     #fasta seq를 readline으로 읽기
+title= data[0]                              #title이라는 변수에 첫줄(0) 저장
 prod_1= data[1:]                            #fasta seq의 첫줄(0)인 타이틀 제외
 
 prod_2= ''.join(prod_1)                     #title을 제외한 line들을 list에서 string으로 join
