@@ -3,7 +3,7 @@ line_continued = ' ' * 21
 CDS_line_flag = False  
 CDS_line_list = [] 
 for line in open('sequence.nucleotide.gb', 'r'):    # 파일의 각 줄을 모두 읽는다.
-    if line.startswith(' ' * 21+'/translation='):   #translation이 나오면 flag true
+    if line.startswith(line_continued+'/translation='):   #translation이 나오면 flag true
         CDS_line_flag = True  
         CDS_line_list.append(line.strip())
         continue                                    #공백제거 후, 리스트에 추가. 이후 다음 if문 진행
