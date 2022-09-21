@@ -8,11 +8,9 @@ title = data[0]
 prod_1= ''.join(data)
 prod_data = prod_1.replace("\n","")
 
-str_data=str(prod_data)
 
-
-seq_start= int(str_data.index("ORIGIN"))
-seq= str_data[(seq_start)+6:]
+seq_start= int(prod_data.index("ORIGIN"))
+seq= prod_data[(seq_start)+6:]
 
 seq_2= re.sub(r'[0-9]+','',seq)
 seq_3= seq_2.replace("'","")
