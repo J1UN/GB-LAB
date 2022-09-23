@@ -1,5 +1,4 @@
 import os
-from socket import if_indextoname
 import Bio.SeqIO as SeqIO
 
 in_title= input("Enter input file: ")
