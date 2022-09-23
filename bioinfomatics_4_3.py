@@ -26,6 +26,9 @@ nam=len(seq_f)%70
 
 
 for i in range(0,len(seq_f)//70+1):
-    # seq_p= seq_f[i*69:(i+1)69]
-
-    print(seq_f[i*70:(i+1)*70],end='\n')
+    if i==len(seq_f)//70:
+        print(seq_f[i*70:i*70+nam],end='')
+    
+    
+    else:
+        print(seq_f[i*70:(i+1)*70-1],end='\n')
