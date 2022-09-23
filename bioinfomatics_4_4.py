@@ -50,19 +50,6 @@ try:
 
             out_file_op.write(rev_comp_s)
 
-#========================[bio를 import안한 경우]========================
-# elif op==2:
-#    rev_comp=[]
-#    rev_comp_table={'G':'C', 'A':'T','C':'G','T':'A'}
-                                    #상보서열 변환을 위해 값부여
-#    for i in rev_seq:
-#        rev_comp.append(rev_comp_table[i])
-                                    #상보서열로 변환
-        
-#    out_op2=str(rev_comp)           #상보서열을 문자열로
-#    out_fasta.write(out_op2)        #상보서열 입력
-#=======================================================================
-
 
 #op3 정보가공
     if int(op_)==3:
@@ -72,7 +59,7 @@ try:
         in_file_op.close()
         out_file_op.close()
 
-    else:
+    if int(op_)<0 or in(op_)>3:
         print("Input is wrong number(1~3).")
 
 except ValueError as e:
