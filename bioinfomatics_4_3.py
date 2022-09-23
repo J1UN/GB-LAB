@@ -31,4 +31,4 @@ for i in range(0,len(seq_f)//70+1):
     
     
     else:
-        print(seq_f[i*70:(i+1)*70-1],end='\n')
+        print(seq_f[i*70:(i+1)*70],end='\n')
