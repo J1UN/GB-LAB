@@ -46,15 +46,25 @@ list_reverse2=[]
 list_reverse3=[]
 
 
+base_ex=len(pure_seq)%3
+flag_2=0
+flag_3=0
+
+if base_ex==1:
+    flag_2=1
+if base_ex==2:
+    flag_2=1
+    flag_3=1
+
 for n in range(0,len(pure_seq)//3):
      list_forward1.append(base[rf1[n]])
      list_reverse1.append(base[rv_rf1[n]])
 
-for n in range(0,len(pure_seq)//3-1):
+for n in range(0,len(pure_seq)//3-1 +flag_2):
      list_forward2.append(base[rf2[n]])
      list_reverse2.append(base[rv_rf2[n]])
 
-for n in range(0,len(pure_seq)//3-1):
+for n in range(0,len(pure_seq)//3-1 +flag_3):
      list_forward3.append(base[rf3[n]])
      list_reverse3.append(base[rv_rf3[n]])
 
