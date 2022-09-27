@@ -1,5 +1,6 @@
 import re
 import os
+import DNA_basecode                             #DNA_basecode.py 를 통해 base와 codon을 입력한 딕셔너리 가져오기
 
 f= open("sequence.nucleotide.fasta","r")
 
@@ -12,12 +13,6 @@ for lines in p_seq:                             #replace로 개행문자 제거 
 
 str_seq=''.join(pure_seq)                       #pure_seq 리스트를 문자열로 변환('열','열','열'로 저장되어 있기 때문에 문자열로 바꿔서 이어준다.)
 
-base={'TTT':'F','TTC':'F','TTA':'L','TTG':'L', 'CTT':'L','CTC':'L','CTA':'L','CTG':'L','ATT':'I','ATC':'I','ATA':'I','ATG':'M','GTT':'V'
-      , 'GTC':'V','GTA':'V','GTG':'V','TCT':'S','TCC':'S','TCA':'S','TCG':'S','CCT':'P','CCC':'P','CCA':'P','CCA':'P','CCG':'P','ACT':'T'
-      , 'ACC':'T','ACA':'T','ACG':'T','GCT':'A','GCC':'A','GCA':'A','GCG':'A','TAT':'Y','TAC':'Y','TAA':'*','TAG':'*','TGA':'*',
-      'CAT':'H','CAC':'H','CAA':'Q','CAG':'Q','AAT':'N','AAC':'N','AAA':'K','AAG':'K','GAT':'D','GAC':'D','GAA':'D','GAG':'E','TGT':'C'
-      , 'TGC':'C','TGG':'W','CGT':'R','CGC':'R','CGA':'R','CGG':'R','AGT':'S','AGC':'S','AGA':'R','AGG':'R','GGT':'G','GGC':'G','GGA':'G'
-      , 'GGG':'G'}
 #DNA seq 코드와 아미노산서열의 딕셔너리 
 
 
