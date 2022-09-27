@@ -47,17 +47,17 @@ list_reverse3=[]
 
 for rf in range(0,3):
     if rf == 0:
-        for n in range(rf,len(pure_seq)//3-rf):
+        for n in range(rf,len(pure_seq)//3):
             list_forward1.append(base[rf1[n]])
             list_reverse1.append(base[rv_rf1[n]])
 
     if rf == 1:
-        for n in range(rf,len(pure_seq)//3-rf):
+        for n in range(rf,len(pure_seq)//3-1):
             list_forward2.append(base[rf2[n]])
             list_reverse2.append(base[rv_rf2[n]])
 
     if rf == 2:
-         for n in range(rf,len(pure_seq)//3-rf):
+         for n in range(rf,len(pure_seq)//3-1):
             list_forward3.append(base[rf3[n]])
             list_reverse3.append(base[rv_rf3[n]])
 
