@@ -23,12 +23,20 @@ for n in range(0,len(pure_seq)):                    #pure_seq과 동일한 원�
 
 reverse_comp_seq = ''.join(list_comp_seq)           #문자열로 바꾸어 complement seq 저장
 
-code=[]
-rv_comp_code=[]                                            #triplete code 저장을 위한 리스트
+rf1=[]
+rf2=[]
+rf3=[]
+rv_rf1=[]
+rv_rf2=[]                                            #triplete code 저장을 위한 리스트
+rv_rf3=[]
 
-for i in range(1,len(pure_seq)//3+1):               #i의 범위는 pure_seq의 염기 수
-        code.append(str_seq[3*(i-1):(3*(i)):])      #code리스트에 str_seq를 인덱스 '012','345'순으로 추가 ※.append(시작점:종료점:스텝)
-        rv_comp_code.append(reverse_comp_seq[3*(i-1):(3*(i)):])
+for i in range(0,len(pure_seq)//3):
+    rf1.append(str_seq[3*i:3*(i+1):])
+    rf2.append(str_seq[3*i+1:3*(i+1)+1:])
+    rf3.append(str_seq[3*i+2:3*(i+1)+2:])
+    rv_rf1.append(reverse_comp_seq[3*i:3*(i+1):])
+    rv_rf2.append(reverse_comp_seq[3*i+1:3*(i+1)+1:])
+    rv_rf3.append(reverse_comp_seq[3*i+2:3*(i+1)+2:])
 
 list_forward1=[]
 list_forward2=[]
@@ -39,19 +47,19 @@ list_reverse3=[]
 
 for rf in range(0,3):
     if rf == 0:
-        for n in range(rf,len(pure_seq)//3+rf):
-            list_forward1.append(base[code[n]])
-            list_reverse1.append(base[rv_comp_code[n]])
+        for n in range(rf,len(pure_seq)//3-rf):
+            list_forward1.append(base[rf1[n]])
+            list_reverse1.append(base[rv_rf1[n]])
 
     if rf == 1:
-        for n in range(rf,len(pure_seq)//3+rf-1):
-            list_forward2.append(base[code[n]])
-            list_reverse2.append(base[rv_comp_code[n]])
+        for n in range(rf,len(pure_seq)//3-rf):
+            list_forward2.append(base[rf2[n]])
+            list_reverse2.append(base[rv_rf2[n]])
 
     if rf == 2:
-        for n in range(rf,len(pure_seq)//3+rf-2):
-            list_forward3.append(base[code[n]])
-            list_reverse3.append(base[rv_comp_code[n]])
+         for n in range(rf,len(pure_seq)//3-rf):
+            list_forward3.append(base[rf3[n]])
+            list_reverse3.append(base[rv_rf3[n]])
 
 forward1=''.join(list_forward1)
 forward2=''.join(list_forward2)
