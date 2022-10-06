@@ -6,10 +6,13 @@ data= gb.readlines()
 title = data[0]
 
 
-str_data=''.join(data)
-str_data2= str_data.relace('\n','')
-seq_start= int(str_data.index("ORIGIN"))
-seq= str_data2[(seq_start)+6:]
+str_data1 = ''.join(data)
+str_data2 = re.sub(r'[0-9]+', '', str_data1)
+str_data3 = str_data2.replace('\n','')
+str_data4 = str_data3.replace(' ','')
+
+seq_start= int(str_data4.index("ORIGIN"))
+seq= str_data4[(seq_start)+6:]
 
 
 print("title: ",title)
