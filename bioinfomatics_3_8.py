@@ -1,30 +1,39 @@
 from bioinfomatics_3_6_seq import seq 
 
 
-while(True):                            #서치 AA 반복
-    target = input("Searching for: ")   #서치 AA입력칸
+while True:                             # 서치 AA 반복
+    target = input("Searching for: ")   # 서치 AA입력칸
 
-    index = -1                          #인덱스가 0번부터 시작하므로 (*)
-    num_list=[]                         #AA 인덱스를 입력할 리스트
-    
-    if target == "XXX":                 #XXX입력 시, 서치 반복문  종료위해 앞에 배치
+    index = -1                          # 인덱스가 0번부터 시작하므로 (*)
+    num_list=[]                         # AA 인덱스를 입력할 리스트
+    flag_exist_aa=seq.find(target)
+
+    if target == "XXX":                 # XXX입력 시, 서치 반복문  종료위해 앞에 배치
         print("Okay, I will stop.")
         break
     
-    else:                               #XXX가 아닐 시 반복수행
-        while(True):
-            index = seq.find(target, index + 1)
-            
-            if index == -1:             #index가 -1인 경우 값이 없는 것이므로 중지
-                break
+    elif flag_exist_aa == -1:
+        print("This aa dosen't exist in this sequence!")
 
-            num_list.append(index)      #매 검색마다 index를 리스트에 추가
+    else:                               # XXX가 아닐 시 반복수행
+        for i, aa in enumerate(seq):
+            if aa == target:
+                num_list.append(i)
+    result = ', '.join(str(s) for s in num_list)
+
+
+#======================feedback 이전 코드=========================================
+#        while(True):
+#            index = seq.find(target, index + 1)
+#            
+#            if index == -1:             # index가 -1인 경우 값이 없는 것이므로 중지
+#               break
+
+#            num_list.append(index)      # 매 검색마다 index를 리스트에 추가
 
         
-        result= ', '.join(str(s) for s in num_list)
-                                        #서치 반복문 밖에서 리스트를 문자열로 변환
+#        result= ', '.join(str(s) for s in num_list)
+                                        # 서치 반복문 밖에서 리스트를 문자열로 변환
+#=================================================================================
 
-
-    print("Found at: ",result)          #인풋 반복문 안에서 결과값 도출
-
-
+    print("Found at: ",result)          # 인풋 반복문 안에서 결과값 도출
